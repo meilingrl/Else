@@ -1,0 +1,28 @@
+---
+description: Gameplay architecture rules for extensible systems
+globs: **/*.cs
+alwaysApply: false
+---
+
+# Gameplay Architecture
+
+- Separate input, domain logic, and presentation.
+- Input must emit commands; commands drive gameplay state changes.
+- Keep gameplay rules in plain C# services where possible, not MonoBehaviours.
+- Use events for cross-system communication; avoid deep direct references.
+- Prefer state machines for boss/player combat states.
+
+# Timing Rules
+
+- Deterministic gameplay decisions happen in fixed-step updates.
+- Visual-only interpolation and effects happen in frame updates.
+
+# Example
+
+```csharp
+// BAD: input directly mutates combat state in view script
+if (Input.GetKeyDown(KeyCode.Space)) _boss.Stun();
+
+// GOOD: input -> command -> domain handler
+if (_input.ParryPressed) _commandBus.Publish(new ParryCommand(playerId));
+```

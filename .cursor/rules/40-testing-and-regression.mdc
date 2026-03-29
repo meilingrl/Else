@@ -1,0 +1,25 @@
+---
+description: Testing and regression rules for gameplay stability
+globs: **/*.cs
+alwaysApply: false
+---
+
+# Testing and Regression
+
+- Every bug fix should include a reproducible check.
+- Add focused tests for core rules (damage, death, cooldown, state transitions).
+- Prefer deterministic test inputs; avoid random behavior in tests.
+- Keep test names behavior-based (`Should_X_When_Y`).
+
+# Regression Checklist
+
+- Can start a run, fail, and restart without soft lock.
+- Core combat actions still work after refactors.
+- Save/config load does not crash with previous data.
+
+# Example
+
+```csharp
+[Test]
+public void Should_Die_When_UnmitigatedHitReceived() { /* ... */ }
+```

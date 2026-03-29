@@ -1,0 +1,29 @@
+---
+description: Unity C# style and safety conventions
+globs: **/*.cs
+alwaysApply: false
+---
+
+# Unity C# Style
+
+- Use `PascalCase` for types/methods/properties.
+- Use `_camelCase` for private fields.
+- Keep methods short; one behavior per method.
+- Prefer explicit types unless `var` improves readability.
+- Use `nameof(...)` for parameter/argument exceptions.
+
+# Unity Safety
+
+- Cache component references in `Awake`/`Start`; avoid repeated `GetComponent`.
+- Do not allocate in hot paths (`Update`, `FixedUpdate`) when avoidable.
+- Use `[SerializeField] private` instead of public mutable fields.
+
+# Example
+
+```csharp
+// BAD
+public Rigidbody2D rb;
+
+// GOOD
+[SerializeField] private Rigidbody2D _rb;
+```

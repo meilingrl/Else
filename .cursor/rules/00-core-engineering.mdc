@@ -1,0 +1,29 @@
+---
+description: Core engineering rules for maintainable delivery
+alwaysApply: true
+---
+
+# Core Engineering Rules
+
+- Prefer simple, proven implementations over clever abstractions.
+- Keep changes small and scoped; avoid touching unrelated code.
+- For new behavior, define acceptance checks before coding.
+- Make architecture decisions explicit in docs when trade-offs exist.
+- Avoid premature optimization; profile before deep optimization work.
+
+# Quality Gates
+
+- No silent failures: log context and return explicit errors.
+- No magic numbers in gameplay logic; move to config.
+- No dead code, commented-out blocks, or placeholder TODO chains.
+- Preserve backward compatibility for save/config formats when possible.
+
+# Example
+
+```csharp
+// BAD
+if (hp <= 0) state = 3;
+
+// GOOD
+if (hp <= 0) state = EntityState.Dead;
+```

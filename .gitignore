@@ -1,0 +1,67 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / editors
+.vs/
+.idea/
+*.swp
+*.swo
+*~
+
+# VS Code：需要团队共享配置时可提交 .vscode/；若只想本机用，再自行加入 .vscode/
+
+# Unity：任意子目录下的工程缓存（含 Unity/My project）
+**/Library/
+**/Temp/
+**/Obj/
+**/obj/
+**/Logs/
+**/UserSettings/
+**/MemoryCaptures/
+**/Recordings/
+
+# Unity 崩溃与本地缓存
+**/sysinfo.txt
+**/CrashReports/
+
+# Unity 生成工程文件（由 Editor 再生成）
+**/*.csproj
+**/*.unityproj
+**/*.sln
+**/*.suo
+**/*.user
+**/*.userprefs
+**/*.pidb
+**/*.booproj
+**/*.svd
+**/*.pdb
+**/*.mdb
+**/*.opendb
+**/*.VC.db
+**/*.VC.VC.opendb
+**/ExportedObj/
+**/.consulo/
+
+# Gradle（若以后 Android）
+**/.gradle/
+
+# 构建产物（勿用 **/*.dll 全库忽略，Assets 里可能有插件）
+**/Build/
+**/Builds/
+**/*.apk
+**/*.aab
+**/*.app
+
+# Unity 包导出
+**/*.unitypackage
+
+# Addressables 二进制（若启用）
+**/Assets/AddressableAssetsData/*/*.bin*
+
+# JetBrains Rider 插件（若自动生成）
+**/Assets/Plugins/Editor/JetBrains*
+
+# 可选：Asset Store 工具
+# **/Assets/AssetStoreTools*

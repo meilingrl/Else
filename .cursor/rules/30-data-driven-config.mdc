@@ -1,0 +1,28 @@
+---
+description: Data-driven design rules for tuning and balancing
+globs: **/*.cs
+alwaysApply: false
+---
+
+# Data-Driven Configuration
+
+- Put tunable gameplay numbers in config assets, not hardcoded constants.
+- Use versioned config structures for forward compatibility.
+- Validate config at load/startup and fail fast on invalid values.
+- Use clear units in names (`seconds`, `meters`, `frames`).
+
+# Config Discipline
+
+- Keep defaults safe and playable.
+- Never mix editor-only assumptions into runtime logic.
+- Add migration notes when config schema changes.
+
+# Example
+
+```csharp
+// BAD
+_parryWindow = 0.16f;
+
+// GOOD
+_parryWindowSeconds = _combatConfig.parryWindowSeconds;
+```

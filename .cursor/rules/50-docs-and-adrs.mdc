@@ -1,0 +1,25 @@
+---
+description: Documentation and architecture decision record standards
+globs: docs/**/*.md
+alwaysApply: false
+---
+
+# Docs and ADR Standards
+
+- Document decisions, not only conclusions.
+- Include context, options considered, chosen option, and consequences.
+- Keep docs actionable: add next steps and owner where possible.
+- Update linked docs when behavior or architecture changes.
+
+# ADR Template (short)
+
+```md
+## Context
+## Decision
+## Alternatives
+## Consequences
+```
+
+# Rule of Thumb
+
+- If a change affects system boundaries, write/update an ADR.

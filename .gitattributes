@@ -1,0 +1,23 @@
+# 换行由 Git 按平台处理；独立 Windows 开发这样最省心
+* text=auto
+
+# 明确二进制
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.tif binary
+*.tiff binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.aif binary
+*.aiff binary
+*.ttf binary
+*.otf binary
+*.dll binary
+*.exe binary
+*.zip binary
+*.7z binary
+*.unitypackage binary
