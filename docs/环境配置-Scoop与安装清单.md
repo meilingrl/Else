@@ -199,7 +199,33 @@ dotnet --info          # 若已装 SDK
 
 ---
 
-## 9. 常用 Scoop 维护命令
+## 9. Git 仓库（本机已初始化）
+
+仓库根目录：`E:\Dev\Projects\Else`（含 `docs/`、`.cursor/`、`Unity/My project/`）。
+
+- 已执行 `git init`，默认分支为 **`main`**，并有一次初始提交（含文档、Cursor 规则、Unity 工程应入库部分）。
+- 根目录 **`.gitignore`**：忽略任意子工程下的 **`Library/`、`Temp/`、`Logs/`、`UserSettings/`、`Obj/`** 等；忽略 Unity 再生成的 **`*.sln` / `*.csproj`**（由 Editor 重新生成）。
+- 根目录 **`.gitattributes`**：声明常见二进制类型；文本使用 `text=auto`（与 Windows 上 `core.autocrlf` 配合即可）。
+
+**后续你本地可补**（未替你执行，因涉及账号）：
+
+```powershell
+git config --global user.name "你的名字"
+git config --global user.email "你的邮箱"
+git config --global init.defaultBranch main
+```
+
+远程托管（GitHub / Gitee 等）在平台创建空仓库后：
+
+```powershell
+cd E:\Dev\Projects\Else
+git remote add origin <远程仓库 URL>
+git push -u origin main
+```
+
+---
+
+## 10. 常用 Scoop 维护命令
 
 ```powershell
 scoop update scoop
@@ -210,8 +236,9 @@ scoop checkup
 
 ---
 
-## 10. 修订记录
+## 11. 修订记录
 
 | 日期 | 说明 |
 |------|------|
 | 2026-03-28 | 初版：Scoop 优先 + Unity Hub / Editor / VS 手动分界 |
+| 2026-03-29 | 补充：Git 初始化说明与 `.gitignore` / `.gitattributes` |
