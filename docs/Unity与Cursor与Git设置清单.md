@@ -32,14 +32,25 @@
 
 ---
 
-## 二、Project Settings → Editor（Git + 可读 diff，强烈建议）
+## 二、Project Settings（Git + 可读 diff，强烈建议）
+
+### 2.1 Version Control（Unity 6 单独一页，不在 Editor 里）
+
+菜单：**Edit → Project Settings → Version Control**（左侧与 **Editor** 并列的独立分类）。
+
+| 项 | 推荐值 | 说明 |
+|----|--------|------|
+| **Mode** | **Visible Meta Files** | 每个资源有 `.meta`，Git 必跟踪，换机器不丢引用。 |
+
+若在 **Editor** 页找不到该项，属正常；以 **Version Control** 页为准。也可在 `ProjectSettings/VersionControlSettings.asset` 中确认存在 `m_Mode: Visible Meta Files`。
+
+### 2.2 Editor → Asset Serialization
 
 菜单：**Edit → Project Settings → Editor**
 
 | 项 | 推荐值 | 说明 |
 |----|--------|------|
-| **Version Control** | **Visible Meta Files** | 每个资源有 `.meta`，Git 必跟踪，换机器不丢引用。 |
-| **Asset Serialization** | **Force Text** | 场景/预制体文本化，`git diff` 有意义（合并仍要小心）。 |
+| **Asset Serialization → Mode** | **Force Text** | 场景/预制体文本化，`git diff` 有意义（合并仍要小心）。 |
 
 ---
 
