@@ -1,0 +1,4 @@
+{
+  "explorer.excludeGitIgnore": false,
+  "dotnet.defaultSolution": "Unity/Else/Else.slnx"
+}
